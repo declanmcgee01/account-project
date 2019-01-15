@@ -1,5 +1,8 @@
 package com.qa.accountApplication;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 /**
  * Hello world!
  *
@@ -8,6 +11,7 @@ public class App
 {
     public static void main( String[] args )
     {
+    	Gson gson = new GsonBuilder().create();
     	Service service = new Service();
     	Account account1 = new Account("Umayr", "Nightmayr", 0);
     	Account account2 = new Account("Matt", "Trainerman", 1);
@@ -16,11 +20,8 @@ public class App
     	service.addAccount(0, account1);
     	service.addAccount(1, account2);
     	service.addAccount(2, account3);
-  
-        System.out.println(service.getAccount(0));
         
-        service.deleteAccount(1);
+        gson.toJson(service.repo.accountMap, System.out);
         
-        System.out.println(service.getAccount(1));
     }
 }
