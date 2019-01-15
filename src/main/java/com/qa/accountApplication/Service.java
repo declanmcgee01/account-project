@@ -1,28 +1,24 @@
 package com.qa.accountApplication;
 
 
-import java.util.HashMap;
-import java.util.Map;
 
 public class Service {
+		
+	public Repo repo = new Repo();
 	
-	
-	
-	Map<Integer, Account> accountMap = new HashMap();
-	
-	public void addAccount(Account acc)
+	public void addAccount(int key, Account acc)
 	{
-		accountMap.put(acc.getAccountNumber(), acc);
+		repo.accountMap.put(key, acc);
 	}
 	
-	public Account getAccount(Account acc)
+	public Account getAccount(int key)
 	{
-		return accountMap.get(acc.getAccountNumber());
+		return repo.accountMap.get(key);
 	}
 	
-	public void deleteAccount(Account acc)
+	public void deleteAccount(int key)
 	{
-		accountMap.remove(acc.getAccountNumber());
+		repo.accountMap.remove(key);
 	}
 
 }
