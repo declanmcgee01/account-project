@@ -95,5 +95,23 @@ public class AppTest
 		service.addAccount(0,account1);
 		assertEquals("Account [firstName=Umayr, lastName=Nightmayr, accountNumber=0]", service.getAccount(0).toString());
 	}
+	
+	@Test
+	public void testCheckFirstName()
+	{
+		service.addAccount(0, account1);
+		service.addAccount(1, account1);
+		assertEquals(2, service.firstNameCounter("Umayr"));
+	}
+	
+	@Test
+	public void testCheckFirstName2()
+	{
+		service.addAccount(0, account1);
+		service.addAccount(1, account1);
+		assertEquals(0, service.firstNameCounter("notUmayr"));
+	}
+	
+	
 
 }

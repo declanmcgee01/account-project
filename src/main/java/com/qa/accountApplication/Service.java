@@ -1,6 +1,6 @@
 package com.qa.accountApplication;
 
-
+import java.util.Map.Entry;
 
 public class Service {
 		
@@ -19,6 +19,20 @@ public class Service {
 	public void deleteAccount(int key)
 	{
 		repo.accountMap.remove(key);
+	}
+	
+	public int firstNameCounter(String name)
+	{
+		int counter = 0;
+		for (Account value : repo.accountMap.values()) {
+		    if(name.equals(value.getFirstName()))
+		    {
+		    counter++;
+		    }else {
+		    	break;
+		    }
+		}	
+		return counter;
 	}
 
 }
