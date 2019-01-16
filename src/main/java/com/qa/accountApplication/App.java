@@ -20,7 +20,8 @@ public class App
     	service.addAccount(0, account1);
     	service.addAccount(1, account2);
     	service.addAccount(2, account3);
-        
+    	service.addAccount(3, account1);
+    	System.out.println(service.firstNameCounter("Umayr"));
         gson.toJson(service.repo.accountMap, System.out);
         
     }
