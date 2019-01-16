@@ -25,10 +25,13 @@ public class Service {
 	{
 		int counter = 0;
 		for (Account value : repo.accountMap.values()) {
-		    if(name.equals(value.getFirstName()));
+		    if(name.equals(value.getFirstName()))
+		    {
 		    counter++;
-		}
-		
+		    }else {
+		    	break;
+		    }
+		}	
 		return counter;
 	}
 
