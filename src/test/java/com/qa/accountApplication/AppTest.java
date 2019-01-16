@@ -104,5 +104,14 @@ public class AppTest
 		assertEquals(2, service.firstNameCounter("Umayr"));
 	}
 	
+	@Test
+	public void testCheckFirstName2()
+	{
+		service.addAccount(0, account1);
+		service.addAccount(1, account1);
+		assertEquals(0, service.firstNameCounter("notUmayr"));
+	}
+	
+	
 
 }
